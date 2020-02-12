@@ -77,7 +77,17 @@ public class WebAccountsService {
             return account;
         }
     }
-  
+    public Account[] all() {
+
+        Account[] accounts = null;
+        try {
+            accounts = restTemplate.getForObject(serviceUrl + "/accounts/all", Account[].class);
+
+        } catch (Exception ee) {
+
+        }
+        return accounts;
+    }
 }
 
 
